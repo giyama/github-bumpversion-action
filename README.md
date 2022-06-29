@@ -2,6 +2,9 @@
 
 A Github Action to use the [bumpversion](https://pypi.org/project/bumpversion/) application to bump and tag branches
 
+This repository was forked from https://github.com/jaumann/github-bumpversion-action to solve the issue with unsafe directory.
+
+
 ![Lint Status](https://github.com/jaumann/github-bumpversion-action/workflows/Lint%20Code%20Base/badge.svg)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jaumann/github-bumpversion-action?label=Github%20Release)](https://github.com/jaumann/github-bumpversion-action/releases)
 [![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/jaumann/github-bumpversion-action?sort=semver&label=Docker%20Version)](https://hub.docker.com/r/jaumann/github-bumpversion-action)
@@ -21,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Bump version and push tag
-        uses: jaumann/github-bumpversion-action@v0.0.7
+        uses: giyama/github-bumpversion-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Push changes
